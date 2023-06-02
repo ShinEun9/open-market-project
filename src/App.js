@@ -1,7 +1,13 @@
+import Header from "./components/Header";
+import ImageSwiper from "./components/ImageSwiper";
+import ProductItemList from "./components/ProductItemList";
+import "./reset.css";
 function App() {
   return (
     <div>
-      hello world
+      <Header />
+      <ImageSwiper />
+      <ProductItemList />
     </div>
   );
 }

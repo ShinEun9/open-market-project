@@ -1,0 +1,10 @@
+.listSection {
+  margin: 0 auto 180px auto;
+  max-width: 1280px;
+}
+
+.list {
+  display: grid;
+  gap: 78px 70px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+}

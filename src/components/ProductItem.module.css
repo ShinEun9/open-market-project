@@ -1,0 +1,31 @@
+.productImage {
+  width: 100%;
+  aspect-ratio: 380/ 380;
+  object-fit: cover;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.seller {
+  font-weight: 400;
+  font-size: 16px;
+  color: #767676;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.price strong {
+  font-weight: 700;
+  font-size: 24px;
+}
