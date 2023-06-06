@@ -5,7 +5,7 @@ export default function ProductItem({ item }) {
   return (
     <article>
       <img className={styles.productImage} src={item.image} alt="" />
-      <p className={styles.seller}>{item.seller_store}</p>
+      <p className={styles.seller}>{item.store_name}</p>
       <h3 className={styles.name}>{item.product_name}</h3>
       <span className={styles.price}>
         <strong>{new Intl.NumberFormat().format(item.price)}</strong>원

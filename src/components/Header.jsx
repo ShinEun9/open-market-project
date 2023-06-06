@@ -1,9 +1,10 @@
-import React from "react";
-import styles from "./Header.module.css";
-import LogoHodu from "../assets/Logo-hodu.png";
-import Search from "../assets/icon-search.svg";
-import ShoppingCart from "../assets/icon-shopping-cart.svg";
-import Login from "../assets/icon-user.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
+import LogoHodu from '../assets/Logo-hodu.png';
+import Search from '../assets/icon-search.svg';
+import ShoppingCart from '../assets/icon-shopping-cart.svg';
+import Login from '../assets/icon-user.svg';
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
       <div>
         <a href="#" className={styles.logoBtn}>
           <h1>
-            <img src={LogoHodu} alt="" />
+            <img src={LogoHodu} alt="로고사진" />
           </h1>
         </a>
         <form className={styles.searchForm}>
@@ -21,14 +22,14 @@ export default function Header() {
           </button>
         </form>
         <div className={styles.headerIconBtns}>
-          <a href="#" className={styles.headerIconBtn}>
+          <Link className={styles.headerIconBtn}>
             <img src={ShoppingCart} alt="장바구니버튼" />
             <p>장바구니</p>
-          </a>
-          <a href="#" className={styles.headerIconBtn}>
+          </Link>
+          <Link to={'/login'} className={styles.headerIconBtn}>
             <img src={Login} alt="로그인 버튼" />
             <p>로그인</p>
-          </a>
+          </Link>
         </div>
       </div>
     </header>

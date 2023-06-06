@@ -1,0 +1,35 @@
+.loginTabs {
+  display: flex;
+}
+
+.loginTab {
+  width: 50%;
+  text-align: center;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  height: 80px;
+  background: #f2f2f2;
+}
+
+.loginTab button {
+  width: 100%;
+  height: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+}
+
+.loginTab.active {
+  z-index: 200;
+  background-color: white;
+}
+.loginTab.active::after {
+  content: '';
+  display: block;
+  width: calc(100% + 1px);
+  height: 20px;
+  background: white;
+}
+.loginTab:last-of-type.active::after {
+  margin-left: -1px;
+}
