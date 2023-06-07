@@ -11,7 +11,19 @@
 .login-section {
   margin: 0 auto;
   width: 550px;
+  height: 380px;
 }
 
 .btns-container {
+  width: 184px;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 auto;
+  display: flex;
+  color: #333333;
+}
+
+.btns-container span {
+  display: block;
+  margin: 0 14px;
 }

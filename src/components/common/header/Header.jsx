@@ -10,11 +10,11 @@ export default function Header() {
   return (
     <header className={styles['header']}>
       <div>
-        <a href="#" className={styles['logo-btn']}>
+        <Link to="/" className={styles['logo-btn']}>
           <h1>
             <img src={LogoHodu} alt="로고사진" />
           </h1>
-        </a>
+        </Link>
         <form className={styles['search-form']}>
           <input type="text" placeholder="상품을 검색해보세요!" />
           <button>

@@ -19,9 +19,9 @@ export default function LoginPage() {
         <h2 className="a11y-hidden">구매회원 로그인/판매회원로그인</h2>
         <LoginFormBox />
       </section>
-      <div className={styles['btn-container']}>
+      <div className={styles['btns-container']}>
         <Link to="/signup">회원가입</Link>
-        <span></span>
+        <span>|</span>
         <Link to="/findpw">비밀번호 찾기</Link>
       </div>
     </>

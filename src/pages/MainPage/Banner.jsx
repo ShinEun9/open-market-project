@@ -1,40 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import styles from './ImageSwiper.module.css';
+import React, { useState, useMemo, useRef } from 'react';
+import styles from './Banner.module.css';
 import Prev from '../../assets/icon-swiper-1.svg';
 import Next from '../../assets/icon-swiper-2.svg';
 
-export default function ImageSwiper() {
-  const [imgList, setImgList] = useState([]);
-  const [index, setIndex] = useState(0);
+const getImgSrc = () => {
+  console.log('getImgSrc');
+  const list = [];
+  for (let i = 0; i < 5; i++) {
+    list.push(`./assets/img_${i + 1}.jpg`);
+  }
+  return list;
+};
 
-  useEffect(() => {
-    const getImage = async () => {
-      try {
-        const res = await fetch('https://picsum.photos/v2/list?page=1&limit=5');
-        const data = await res.json();
-        setImgList(data);
-      } catch (error) {
-        throw new Error('네트워크 에러입니다');
-      }
-    };
-    getImage();
+export default function Banner() {
+  const imgList = useMemo(() => {
+    return getImgSrc();
   }, []);
+
+  const imgLength = useRef(5);
+  const [index, setIndex] = useState(0);
 
   const handleBtnClick = (e) => {
     const value = e.currentTarget.firstChild.textContent;
     if (value === '이전 이미지 보기 버튼') {
       setIndex((index) => {
         if (index === 0) {
-          return 4;
+          return imgLength.current - 1;
         } else {
           return index - 1;
         }
       });
     } else {
       setIndex((index) => {
-        if (index === 4) {
+        console.log(index, imgLength.current - 1);
+        if (index === imgLength.current - 1) {
           return 0;
         } else {
+          console.log(index + 1);
           return index + 1;
         }
       });
@@ -48,9 +50,7 @@ export default function ImageSwiper() {
         <span className={'a11y-hidden'}>이전 이미지 보기 버튼</span>
         <img src={Prev} alt="왼쪽 화살표" />
       </button>
-      {!!imgList.length && (
-        <img src={imgList[index].download_url} alt={`배너${index + 1}`} />
-      )}
+      <img src={imgList[index]} alt={`배너${index + 1}`} />
       <button className={styles.swipeBtn} onClick={handleBtnClick}>
         <span className={'a11y-hidden'}>다음 이미지 보기 버튼</span>
         <img src={Next} alt="오른쪽 화살표" />
