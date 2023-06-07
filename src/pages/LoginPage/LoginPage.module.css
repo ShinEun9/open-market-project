@@ -1,61 +1,17 @@
-body {
-  display: flex;
-  justify-content: center;
-}
-
-.logoBtn {
+.header {
   text-align: center;
+  padding: 100px 0px 70px;
 }
-.logoBtn img {
+
+.header img {
   width: 238px;
-  height: 74px;
+  object-fit: contain;
 }
-.loginSection {
-  /* text-align: center; */
-  position: relative;
+
+.login-section {
+  margin: 0 auto;
   width: 550px;
-  height: 292px;
 }
 
-.loginForm {
-  position: absolute;
-  top: 60px;
-  z-index: 100;
-  background: white;
-  width: 100%;
-  padding: 36px;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-}
-
-.loginForm label {
-  display: block;
-}
-.loginForm label:first-of-type {
-  margin-bottom: 6px;
-}
-.loginForm label:last-of-type {
-  margin-bottom: 36px;
-}
-
-.loginInput {
-  width: 480px;
-  height: 60px;
-  padding: 20px 0px;
-  border-bottom: 1px solid #767676;
-}
-
-.loginInput::placeholder {
-  color: #767676;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.loginBtn {
-  /* text-align: center; */
-  width: 480px;
-  height: 60px;
-  background: #21bf48;
-  border-radius: 5px;
-  color: white;
+.btns-container {
 }

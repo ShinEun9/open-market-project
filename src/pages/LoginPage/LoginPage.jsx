@@ -1,42 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LogoHodu from '../../assets/Logo-hodu.png';
 import styles from './LoginPage.module.css';
-import LoginTabs from './LoginTabs';
+import LogoHodu from '../../assets/Logo-hodu.png';
+import LoginFormBox from './LoginFormBox';
 
 export default function LoginPage() {
   return (
-    <div>
-      <Link to="/">
-        <h1 className={styles.logoBtn}>
-          <img src={LogoHodu} alt="" />
+    <>
+      <header>
+        <h1 className={styles['header']}>
+          <span className="a11y-hidden">홈화면버튼</span>
+          <Link to="/">
+            <img src={LogoHodu} alt="" />
+          </Link>
         </h1>
-      </Link>
-      <section className={styles.loginSection}>
-        <LoginTabs />
-        <form className={styles.loginForm}>
-          <label htmlFor="user-id">
-            <input
-              type="text"
-              id="user-id"
-              placeholder="아이디"
-              className={styles.loginInput}
-            />
-          </label>
-          <label htmlFor="password">
-            <input
-              type="text"
-              id="password"
-              placeholder="비밀번호"
-              className={styles.loginInput}
-            />
-          </label>
-          <button type="submit" className={styles.loginBtn}>
-            로그인
-          </button>
-        </form>
-        {/* <h2 className="a11y-hidden">로그인</h2> */}
+      </header>
+      <section className={styles['login-section']}>
+        <h2 className="a11y-hidden">구매회원 로그인/판매회원로그인</h2>
+        <LoginFormBox />
       </section>
-    </div>
+      <div className={styles['btn-container']}>
+        <Link to="/signup">회원가입</Link>
+        <span></span>
+        <Link to="/findpw">비밀번호 찾기</Link>
+      </div>
+    </>
   );
 }

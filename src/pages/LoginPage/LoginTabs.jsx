@@ -1,12 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import styles from './LoginTabs.module.css';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles); //eslint-disable-line no-unused-vars
 
-export default function LoginTabs() {
-  const [tabIndex, setTabIndex] = useState(0);
-
+export default function LoginTabs({ tabIndex, setTabIndex }) {
   const handleClickTab = useCallback((e) => {
     const index = parseInt(e.currentTarget.value);
     setTabIndex(index);
