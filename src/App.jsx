@@ -1,10 +1,13 @@
 import React from 'react';
 import Router from './routes/Router.jsx';
+import { UserContextProvider } from './context/UserContext.js';
 
 function App() {
   return (
     <>
-      <Router />
+      <UserContextProvider>
+        <Router />
+      </UserContextProvider>
     </>
   );
 }

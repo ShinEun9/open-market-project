@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './LoginFormBox.module.css';
 import LoginTabs from './LoginTabs';
-import TextInputBox from '../../components/common/text-input-box/TestInputBox';
-import Button from '../../components/common/button/Button';
-import { useInputs } from '../../hooks/useInputs';
+import TextInputBox from '../../common/text-input-box/TestInputBox';
+import Button from '../../common/button/Button';
+import { useInputs } from '../../../hooks/useInputs';
+import { UserContext } from '../../../context/UserContext';
 
 export default function LoginFormBox() {
   const [value, onChange] = useInputs({ username: '', password: '' });
   const [tabIndex, setTabIndex] = useState(0);
+  const { dispatch } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch('https://openmarket.weniv.co.kr/accounts/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          ...value,
-          login_type: tabIndex === 0 ? 'BUYER' : 'SELLER',
-        }),
-      });
+      const res = await fetch(
+        'https://openmarket.weniv.co.kr/accounts/login/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...value,
+            login_type: tabIndex === 0 ? 'BUYER' : 'SELLER',
+          }),
+        },
+      );
       const data = await res.json();
-      console.log(data);
+      dispatch({ type: 'login', payload: data });
     } catch (err) {
       throw new Error(err);
     }

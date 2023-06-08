@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 import LogoHodu from '../../assets/Logo-hodu.png';
-import LoginFormBox from './LoginFormBox';
+import LoginFormBox from '../../components/layouts/Login/LoginFormBox';
 
 export default function LoginPage() {
   return (

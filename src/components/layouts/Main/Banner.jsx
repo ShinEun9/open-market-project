@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef } from 'react';
 import styles from './Banner.module.css';
-import Prev from '../../assets/icon-swiper-1.svg';
-import Next from '../../assets/icon-swiper-2.svg';
+import Prev from '../../../assets/icon-swiper-1.svg';
+import Next from '../../../assets/icon-swiper-2.svg';
 
 const getImgSrc = () => {
   console.log('getImgSrc');
